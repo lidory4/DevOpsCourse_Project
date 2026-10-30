@@ -1,2 +1,28 @@
 def welcome(name):
-    return "Hello "+name+" and welcome to the World of Games (WoG).\nHere you can find many cool games to play."
+    return "Hello "+name+" and welcome to the World of Games (WoG).\nHere you can find many cool games to play.\n"
+
+def load_game():
+    while True:
+        game = int(input("""Please choose a game to play:
+1. Memory Game - 
+2. Guess Game - 
+3. Currency Roulette - 
+"""))
+        if game <= 3 and game > 0:
+            break
+    while True:
+        if game == 1:
+            print("Great you choose Memory Game now lets see how good you are\n")
+        elif game == 2:
+            print("Great you choose Guess Game now lets see how good you are\n")
+        elif game == 3:
+            print("Great you choose Currency Roulette now lets see how good you are\n")
+        difficulty = int(input("""Please choose game difficulty from noob to world class:
+1.noob - don't judge
+2.good -comci comsa
+3.pro - lets start
+4.legendery - mannn!!
+5.worl class - dont wast my time
+"""))
+        if difficulty <= 5 and difficulty > 0:
+            return game, difficulty
