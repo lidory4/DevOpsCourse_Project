@@ -8,13 +8,14 @@ def generate_sequence(difficulty):
         sequence.append(random.randint(1, 101))
     return sequence
 
-def clear_sequence():
-    print("\033[A\033[K", end="")
-
 def show_sequence(sequence):
     print(sequence)
     time.sleep(0.7)
     clear_sequence()
+
+def clear_sequence():
+    print("\033[A\033[K", end="")
+
 
 def get_list_from_user(difficulty):
     while True:
@@ -31,10 +32,9 @@ def get_list_from_user(difficulty):
 def is_list_equal(player_numbers, sequence):
     return player_numbers == sequence
 
-print(is_list_equal([12, 7, 12], [12, 7, 12]))
-print(is_list_equal([12, 7, 12], [7, 12, 12]))
-
-#print(get_list_from_user(3))
-#numbers = generate_sequence(2)
-#show_sequence(numbers)
-#clear_sequence()
+def play(difficulty):
+    sequence = generate_sequence(difficulty)
+    show_sequence(sequence)
+    clear_sequence()
+    player_numbers = get_list_from_user(difficulty)
+    return is_list_equal(player_numbers, sequence)
