@@ -5,10 +5,10 @@ def load_game():
     while True:
         try:
             game = int(input("""Please choose a game to play:
-    1. Memory Game - 
-    2. Guess Game - 
-    3. Currency Roulette - 
-    """))
+1. Memory Game - Memorize the sequence in 0.7 seconds, Blink and you lose.
+2. Guess Game - Guess the secret number, Remember the House always wins.
+3. Currency Roulette - Guess how many shekels a random USD amount is worth, Your bank is watching.
+"""))
             if game <= 3 and game > 0:
                 break
             print("Choose number between 1-3")
@@ -23,12 +23,12 @@ def load_game():
     while True:
         try:
             difficulty = int(input("""Please choose game difficulty from noob to world class:
-    1.noob - don't judge
-    2.good -comci comsa
-    3.pro - lets start
-    4.legendery - mannn!!
-    5.worl class - dont wast my time
-    """))
+1.Noob - Not judging
+2.Good -Comci Comsa
+3.Pro - Lets start
+4.Legendery - Mannn!!
+5.WorlClass - Dont wast my time
+"""))
             if difficulty <= 5 and difficulty > 0:
                 return game, difficulty
             print("Choose number between 1-5")
