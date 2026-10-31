@@ -4,7 +4,7 @@ from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 
 def get_rate():
     try:
-        response = requests.get("https://v6.exchangerate-api.com/v6/e4dfcc0635f10fd9d4e8805b/latest/USD", timeout=0.1)
+        response = requests.get("https://v6.exchangerate-api.com/v6/e4dfcc0635f10fd9d4e8805b/latest/USD", timeout=5)
         response.raise_for_status()
         data = response.json()
         rate = data["conversion_rates"]["ILS"]
@@ -36,7 +36,7 @@ def get_money_interval(difficulty, ils_amount):
 def get_guess_from_user(amount):
     while True:
         try:
-            ils_guess = Decimal(input("Let see how lucky you are, this is the amount " + str(amount) + ". Now tell me what is the ILS? "))
+            ils_guess = Decimal(input("Let see how lucky you are, this is the amount " + str(amount) + "USD. Now tell me what is the ILS? "))
             if ils_guess.is_finite() and ils_guess >= 0:
                 return ils_guess
             else:
@@ -57,7 +57,7 @@ def play(difficulty):
     if win == True:
         return win 
     else:
-        print("Aiiiii!! the correct answer is " + str(ils_amount) + "USD. The exchange rate today is " + str(rate))
+        print("Aiiiii!! the correct answer is " + str(ils_amount) + "ILS. The exchange rate today is " + str(rate))
         return False
 
 #play(1)
