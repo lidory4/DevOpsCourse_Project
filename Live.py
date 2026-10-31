@@ -23,11 +23,11 @@ def load_game():
     while True:
         try:
             difficulty = int(input("""Please choose game difficulty from noob to world class:
-1.Noob - Not judging
-2.Good -Comci Comsa
-3.Pro - Lets start
+1.Noob - Not judging.
+2.Good -Comci Comsa.
+3.Pro - Lets start.
 4.Legendery - Mannn!!
-5.WorlClass - Dont wast my time
+5.WorlClass - Dont wast my time.
 """))
             if difficulty <= 5 and difficulty > 0:
                 return game, difficulty

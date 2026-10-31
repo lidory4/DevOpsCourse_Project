@@ -1,5 +1,4 @@
 import random
-import os
 import time
 
 def generate_sequence(difficulty):
@@ -11,7 +10,6 @@ def generate_sequence(difficulty):
 def show_sequence(sequence):
     print(sequence)
     time.sleep(0.7)
-    clear_sequence()
 
 def clear_sequence():
     print("\033[A\033[K", end="")
@@ -28,7 +26,7 @@ def get_list_from_user(difficulty):
             if len(parts) == difficulty:
                 return player_numbers
         except ValueError:
-            print("please enter whole number only") 
+            print("Please enter whole number only.") 
 def is_list_equal(player_numbers, sequence):
     return player_numbers == sequence
 

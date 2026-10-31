@@ -18,5 +18,7 @@ elif game == 3:
     result = CurrencyRouletteGame.play(difficulty)
 if result:
     print("Winner")
+elif result is None:
+    pass
 else:
     print("Loser")
