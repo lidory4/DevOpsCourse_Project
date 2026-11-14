@@ -1,5 +1,6 @@
 import random
 import time
+import Utils
 
 def generate_sequence(difficulty):
     sequence = []
@@ -33,6 +34,6 @@ def is_list_equal(player_numbers, sequence):
 def play(difficulty):
     sequence = generate_sequence(difficulty)
     show_sequence(sequence)
-    clear_sequence()
+    Utils.Screen_cleaner()
     player_numbers = get_list_from_user(difficulty)
     return is_list_equal(player_numbers, sequence)
