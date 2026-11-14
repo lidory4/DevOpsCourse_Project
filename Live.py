@@ -1,3 +1,9 @@
+import MemoryGame
+import GuessGame
+import CurrencyRouletteGame
+import Score
+import Utils   
+
 def welcome(name):
     return "Hello "+name+" and welcome to the World of Games (WoG).\nHere you can find many cool games to play.\n"
 
@@ -30,7 +36,21 @@ def load_game():
 5.WorlClass - Dont wast my time.
 """))
             if difficulty <= 5 and difficulty > 0:
-                return game, difficulty
+                break
             print("Choose number between 1-5")
         except ValueError:
             print("Please enter whole number")
+    if game == 1:
+        result = MemoryGame.play(difficulty)
+    elif game == 2:
+        result = GuessGame.play(difficulty)
+    elif game == 3:
+        result = CurrencyRouletteGame.play(difficulty)
+    if result:
+        print("Winner")
+        Score.add_score(difficulty)
+
+    elif result is None:
+        pass
+    else:
+        print("Loser")
