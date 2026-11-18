@@ -26,6 +26,8 @@ def get_list_from_user(difficulty):
                 player_numbers.append(int(part))
             if len(parts) == difficulty:
                 return player_numbers
+            else:
+                print("Please enter exactly " + str(difficulty) + " whole numbers")
         except ValueError:
             print("Please enter whole number only.") 
 def is_list_equal(player_numbers, sequence):

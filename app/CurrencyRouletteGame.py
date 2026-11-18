@@ -1,10 +1,16 @@
 import random
 import requests
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
+import os
 
 def get_rate():
+    api_key = os.getenv("EXCHANGE_API_KEY")
+    if api_key is None:
+        print("API KEY is missing, See README to configure")
+        return None
+    url = "https://v6.exchangerate-api.com/v6/" + api_key + "/latest/USD"
     try:
-        response = requests.get("https://v6.exchangerate-api.com/v6/e4dfcc0635f10fd9d4e8805b/latest/USD", timeout=5)
+        response = requests.get(url, timeout=5)
         response.raise_for_status()
         data = response.json()
         rate = data["conversion_rates"]["ILS"]
