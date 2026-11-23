@@ -1,0 +1,14 @@
+Scores site service
+-------------------
+Shows the score of the player in nice minimalist design.
+The image is built from the Dockerfile in the project root.
+The service listens on port 5000 inside the container and is
+available at http://localhost:8777.
+**Build the image:
+docker build -t lidory4/wog-score:1.0 .
+
+**Run the container directly:
+docker run -d --name wog-score -p 8777:5000 lidory4/wog-score:1.0
+
+Stop and remove it:
+docker rm -f wog-score

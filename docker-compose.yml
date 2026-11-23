@@ -1,0 +1,6 @@
+services:
+  scores:
+    build: .
+    image: lidory4/wog-score:1.0
+    ports:
+      - "8777:5000"
